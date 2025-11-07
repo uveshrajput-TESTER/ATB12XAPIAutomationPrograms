@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="/home/uvaesh/IdeaProjects/ATB12XAPIAutomationPrograms"><classes><class name="org.example.ex_03_TestNG_AllureReport.Lab_006_TestCase"><methods><include name="test_GET_Positive_Testcase1"/></methods></class></classes></test></suite>
