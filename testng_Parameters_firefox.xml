@@ -2,8 +2,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/home/uvaesh/IdeaProjects/ATB12XAPIAutomationPrograms">
+      <parameter name="Browser" value="firefox"></parameter>
         <classes>
-           <class name="org.example.ex_04_Rest_Assured_HTTP_Methods.POST.Lab010_POST_BDDStyle">
+           <class name="org.example.ex_05_TestNGexamples.APItesting019_testNG_Parameters">
                </class>
         </classes></test>
 </suite>

@@ -2,9 +2,10 @@ package org.example.ex_03_TestNG_AllureReport;
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;
 public class Lab_006_TestCase {
+    String Pincode ;
     @Test
     public void test_GET_Positive_Testcase1(){
-        String Pincode = "122001";
+         Pincode = "122001";
         RestAssured.given().baseUri("https://api.postalpincode.in")
                 .basePath("/pincode/" + Pincode)
                 .when()

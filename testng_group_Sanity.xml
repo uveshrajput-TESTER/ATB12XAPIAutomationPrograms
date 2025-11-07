@@ -2,8 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/home/uvaesh/IdeaProjects/ATB12XAPIAutomationPrograms">
+      <groups>
+          <run>
+              <include name="sanity">
+              </include>
+          </run>
+      </groups>
+
         <classes>
-           <class name="org.example.ex_04_Rest_Assured_HTTP_Methods.POST.Lab010_POST_BDDStyle">
+           <class name="org.example.ex_05_TestNGexamples.APITesting017_TestNG_Groups">
                </class>
         </classes></test>
 </suite>
