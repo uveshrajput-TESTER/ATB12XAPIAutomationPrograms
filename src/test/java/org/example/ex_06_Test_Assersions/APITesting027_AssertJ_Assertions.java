@@ -1,7 +1,6 @@
 package org.example.ex_06_Test_Assersions;
 
 import io.restassured.RestAssured;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
@@ -10,10 +9,8 @@ import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-
-//import static org.assertj.core.api.Assertions.*;
-public class APITesting027_RestAssured_TestNG_AssertJ_Assertions {
+import static org.assertj.core.api.Assertions.*;
+public class APITesting027_AssertJ_Assertions {
     RequestSpecification requestSpecification;
     ValidatableResponse validatableResponse;
     Response response;
@@ -45,26 +42,29 @@ public class APITesting027_RestAssured_TestNG_AssertJ_Assertions {
         // Get Validatable response to perform validation
         validatableResponse = response.then().log().all();
         validatableResponse.statusCode(200);
-        // Rest Assured -> import org.hamcrest.Matchers; %4-%5
+        // Using Rest Assured -> import org.hamcrest.Matchers; %4-%5
         // Matchers.equalto()
 
         validatableResponse.body("booking.firstname", Matchers.equalTo("Pramod"));
         validatableResponse.body("booking.lastname", Matchers.equalTo("Dutta"));
         validatableResponse.body("booking.depositpaid", Matchers.equalTo(false));
         validatableResponse.body("bookingid", Matchers.notNullValue());
-        // TestNG - Extract the details of the firstname, bookingId, lastname from Response.
 
+
+        // Using  TestNG - Extract the details of the firstname, bookingId, lastname from Response.
         bookingId = response.then().extract().path("bookingid");
         String firstname = response.then().extract().path("booking.firstname");
         String lastname = response.then().extract().path("booking.lastname");
-        // TestNG Assertions - 75%
+        Assert.assertEquals(firstname, "Pramod");
+        Assert.assertEquals(lastname, "Dutta");
+        Assert.assertNotNull(bookingId);
+        // TestNG Assertions - 75% time using this one
         // SoftAssert vs
         // HardAssert -
         // This means that if any assertion fails,
         // the remaining statements in that test method will not be executed.
-        Assert.assertEquals(firstname, "Pramod");
-        Assert.assertEquals(lastname, "Dutta");
-        Assert.assertNotNull(bookingId);
+
+
         // AssertJ( 3rd- Lib to Assertions) - 20%
         assertThat(bookingId).isNotNull().isPositive().isNotZero();
         assertThat(firstname).isNotEmpty().isNotBlank().isNotNull().isEqualTo("Pramod");

@@ -5,13 +5,15 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 public class APITesting026_TestNG_Assertions {
+    // Hard Assertion -This means that if any assertion fails,
+    // the remaining statements in that test method will not be executed.
     @Test(enabled = true)
     public void test_hardAssertExample() {
         System.out.println("Start of the program");
         Assert.assertEquals("pramod", "Pramod");
         System.out.println("End of the program");
     }
-    // Software Assertion
+    // Sof Assertion - opposite to the hard assertions
     @Test
     public void test_softAssertExample() {
         SoftAssert softAssert = new SoftAssert();
